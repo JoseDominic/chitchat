@@ -12,7 +12,7 @@ const io = socketio(server);
 //set public as static folder
 app.use(express.static(path.join(__dirname,'public')));
 
-const botName = 'botDexter'
+const botName = 'UschoolBot'
 
 //listen for a web socket connection event and take action
 io.on('connection',socket => {
@@ -32,7 +32,7 @@ io.on('connection',socket => {
         });
 
         //Welcome message for new user
-        socket.emit('message',formatMessage(botName,'Welcome to ChitChat!'));
+        socket.emit('message',formatMessage(botName,'Welcome to the discussion forum!'));
 
         //send message to all client sockets when a user joins the chat
         //broadcast will be send to all users except the new user
